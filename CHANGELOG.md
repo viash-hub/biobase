@@ -29,6 +29,8 @@
 
 * `star/star_align_reads`: Align reads to a reference genome (PR #22).
 
+* `gffread`: Validate, filter, convert and perform other operations on GFF files (PR #29). 
+
 * `samtools`:
     - `samtools/flagstat`: Counts the number of alignments in SAM/BAM/CRAM files for each FLAG type (PR #30).
 
