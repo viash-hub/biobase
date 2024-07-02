@@ -1,10 +1,10 @@
-name: samtools_fastq
+name: samtools_fasta
 namespace: samtools
-description: Converts a SAM, BAM or CRAM to FASTQ format.
-keywords: [fastq, bam, sam, cram]
+description: Converts a SAM, BAM or CRAM to FASTA format.
+keywords: [fasta, bam, sam, cram]
 links:
   homepage: https://www.htslib.org/
-  documentation: https://www.htslib.org/doc/samtools-fastq.html
+  documentation: https://www.htslib.org/doc/samtools-fasta.html
   repository: https://github.com/samtools/samtools
 references: 
   doi: [10.1093/bioinformatics/btp352, 10.1093/gigascience/giab008]
@@ -21,7 +21,7 @@ argument_groups:
     arguments:
       - name: --output
         type: file
-        description: output FASTQ file
+        description: output FASTA file
         required: true
         direction: output
   - name: Options
@@ -50,12 +50,12 @@ argument_groups:
         alternatives: -t
         type: boolean_true
         description: |
-          Copy RG, BC and QT tags to the FASTQ header line, if they exist.
+          Copy RG, BC and QT tags to the FASTA header line, if they exist.
       - name: --copy_tags_list
         alternatives: -T
         type: string
         description: |
-          Specify a comma-separated list of tags to copy to the FASTQ header line, if they exist. 
+          Specify a comma-separated list of tags to copy to the FASTA header line, if they exist. 
           TAGLIST can be blank or * to indicate all tags should be copied to the output. If using *, 
           be careful to quote it to avoid unwanted shell expansion.
       - name: --read1
@@ -141,7 +141,7 @@ argument_groups:
       - name: --compression
         alternatives: -c
         type: integer
-        description: set compression level when writing gz or bgzf fastq files.
+        description: set compression level when writing gz or bgzf fasta files.
         example: 0
       - name: --index1
         alternatives: --i1
@@ -158,7 +158,7 @@ argument_groups:
       - name: --quality_tag
         type: string
         description: Auxiliary tag to find index quality in. [QT]
-        example: QT
+        example: "QT"
       - name: --index_format
         type: string
         description: |
@@ -170,7 +170,7 @@ argument_groups:
 
 resources:
   - type: bash_script
-    path: script.sh
+    path: ../samtools_fastq/script.sh
 test_resources:
   - type: bash_script
     path: test.sh
